@@ -16,23 +16,25 @@
 
 package TwitchRecover.Core;
 
+import TwitchRecover.Core.Enums.Quality;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
 import java.util.ArrayList;
 
 /**
- * This class handles the core elements
- * for VODs.
+ * This class handles all of the
+ * API calls and retrievals.
  */
-public class VODs {
-    public static ArrayList<String> vodRecover(String[] values){
-        ArrayList<String> results=new ArrayList<String>();
-        return results;
+public class API {
+    private static ArrayList<String> feeds=new ArrayList<String>();         //ArrayList which holds all of the feed links.
+    private static ArrayList<Quality> qualities=new ArrayList<Quality>();   //Arraylist which holds the quality of corresponding feeds.
+    protected static void getLiveFeeds(String channel){
+        feeds.clear();
+        qualities.clear();
+        CloseableHttpClient httpclient = HttpClients.createDefault();
+        HttpGet request=new HttpGet()
     }
 
-    public static void vodDownload(String url, String fp){
-
-    }
-
-    public static void subVODDownload(String url, String fp){
-
-    }
+    private static String[][] getTokens()
 }

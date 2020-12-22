@@ -68,18 +68,21 @@ public class Prompts {
     private static void menuPrinter(){
         System.out.print(
                   "\n\nMenu:"
-                + "\nVODs:"
-                + "\n1. Download a VOD."
-                + "\n2. Download a sub-only VOD (without being subbed to that channel)."
-                + "\n3. Recover a VOD - 60 days maximum."
-                + "\n4. View a muted M3U8 VOD - If a M3U8 VOD has muted segments, use this to view it in its entirety."
-                + "\nHighlights:"
-                + "\n5. Download a highlight."
-                + "\n6. Recover a highlight."
+                + "\nStreams: "
+                + "\n1. Watch a stream live (get the M3U8 stream link of a live stream)."
+                + "\n2. Download a stream live."
+                + "\nVODs: "
+                + "\n3. Download a VOD."
+                + "\n4. Download a sub-only VOD (you do NOT need to be subbed)."
+                + "\n5. Recover a VOD - 60 days maximum (for some streamers VODs are deleted after ~45/50 days)."
+                + "\nHighlights: "
+                + "\n6. Download a highlight."
+                + "\n7. Recover a highlight."
                 + "\nClips:"
-                + "\n7. Download a clip."
-                + "\n8. Recover all clips from a stream - NO time limit."
-                + "\n9. Mass recover options:"
+                + "\n8. Download a clip."
+                + "\n9. Recover ALL clips from a stream - NO time limit."
+                + "\n10. Mass download options."
+                + "\n11. Mass recover options."
         );
     }
 

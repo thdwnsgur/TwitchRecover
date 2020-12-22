@@ -16,13 +16,11 @@
 
 package TwitchRecover.CLI;
 
-import TwitchRecover.Core.Download;
 import TwitchRecover.Core.FileIO;
 import TwitchRecover.Core.Highlights;
 import TwitchRecover.Core.VODs;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
  * This is the handler for the entirety of the CLI
@@ -40,8 +38,11 @@ public class CLIHandler {
             if(mOption<3 || mOption==5 || mOption==7){
                 videoDownload(mOption);
             }
-            else if(mOption==3 || mOption==5){
+            else if(mOption==3 || mOption==6){
                 videoRecover(mOption);
+            }
+            else if(mOption==4){
+                
             }
         }
     }
@@ -90,7 +91,7 @@ public class CLIHandler {
         }
         boolean isM3U8 = option == 2 || (url.substring(url.lastIndexOf("." + 1)).equalsIgnoreCase("m3u8"));
         if(isM3U8 && option!=2){
-            Download.m3u8Download(url, fp);
+            //Download.m3u8Download(url, fp);
         }
         else if(isM3U8 && option==2){
             VODs.subVODDownload(url, fp);

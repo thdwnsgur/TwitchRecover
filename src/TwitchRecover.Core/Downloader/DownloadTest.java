@@ -7,32 +7,22 @@
  * You should have received a copy of the GNU General Public License along with this program. If not see http://www.gnu.org/licenses/ or write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-/*
- * @author Daylam Tayari https://github.com/daylamtayari
- * @version 2.0
- * Github project home page: https://github.com/TwitchRecover
- * Twitch Recover repository: https://github.com/TwitchRecover/TwitchRecover
- */
+package TwitchRecover.Core.Downloader;
 
-package TwitchRecover.Core;
+import org.apache.commons.io.FileUtils;
 
-import java.util.ArrayList;
-
-/**
- * This class handles the core elements
- * for VODs.
- */
-public class VODs {
-    public static ArrayList<String> vodRecover(String[] values){
-        ArrayList<String> results=new ArrayList<String>();
-        return results;
-    }
-
-    public static void vodDownload(String url, String fp){
-
-    }
-
-    public static void subVODDownload(String url, String fp){
-
+import java.io.File;
+import java.io.IOException;
+public class DownloadTest {
+    public static void main(String[] args) {
+        //String url="https://dqrpb9wgowsf5.cloudfront.net/47790eb74a12af7b255d_asmongold_40954680830_1607967138/chunked/index-dvr.m3u8";
+        String url="https://clips-media-assets2.twitch.tv/AT-cm%7C964060174.mp4";
+        String fp="D:\\Downloads\\download-test\\testing123";
+        try{
+            Download.download(url, fp);
+        }
+        catch(Exception e){
+            System.out.println("ERROR");
+        }
     }
 }

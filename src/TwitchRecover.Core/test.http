@@ -1,0 +1,15 @@
+GET https://api.twitch.tv/api/channel/hls/nmplol/access_token
+Accept: application/vnd.twitchtv.v5+json
+Client-ID: kimne78kx3ncx6brgo4mv6wki5h1ko
+
+###
+GET https://api.twitch.tv/api/vods/839445135/access_token
+Accept: application/vnd.twitchtv.v5+json
+Client-ID: v8kfhyc2980it9e7t5hhc7baukzuj2
+
+###
+GET https://api.twitch.tv/kraken/videos/837245930
+Accept: application/vnd.twitchtv.v5+json
+Client-ID: kimne78kx3ncx6brgo4mv6wki5h1ko
+###
+

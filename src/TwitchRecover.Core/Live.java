@@ -22,5 +22,5 @@ package TwitchRecover.Core;
  * It is the home of the live options.
  */
 public class Live {
-
+    public static getLiveStream(String channel)
 }

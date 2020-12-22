@@ -16,10 +16,46 @@
 
 package TwitchRecover.Core;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 /**
  * Clips class which handles everything related to
  * clips directly from the GUI and CLI packages.
  */
 public class Clips {
+    public static void dCU(String url, String fp) throws IOException {
 
+    }
+
+    /**
+     * This method gets the MP4 URL of a clip
+     * from a Twitch clip that is still up
+     * (located at clips.twitch.tv/).
+     * @param url       String value representing the Twitch clip URL.
+     * @return String   Clip MP4 URL.
+     */
+    private static String getTCU(String url) throws IOException{
+        if(!url.contains("clips.twitch.tv/:")) {
+            throw new IOException();
+        }
+        URL u = new URL(url);
+        HttpURLConnection con = (HttpURLConnection) u.openConnection();
+        con.setRequestMethod("GET");
+        con.setRequestProperty("User-Agent", "Mozilla/5.0");
+        if(con.getResponseCode() == HttpURLConnection.HTTP_OK) {
+            BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+            String readLine=null;
+            while((readLine=br.readLine()) !=null){
+                if(readLine.contains("<video") && readLine.contains("src=")){
+                    String u1=readLine.substring(readLine.indexOf("src")+6);
+                    return u1.substring(0, u1.indexOf(">")-1);
+                }
+            }
+        }
+        throw new IOException();
+    }
 }
